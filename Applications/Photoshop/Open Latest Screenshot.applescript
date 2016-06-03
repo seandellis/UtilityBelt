@@ -1,24 +1,13 @@
 ﻿# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 #  Open Latest Screenshot
-#  v1.1 / 2015-01-27
+#  v1.2 / 2016-06-03
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-#  Author: Sean Dellis / 2015
+#  Author: Sean Dellis  //  http://seandellis.com
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # Description
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # * Open all Screenshots created in the last minute or the most recent Screenshot.
 # * Searches within ~/Desktop for files named "Screen Shot *" or within ~/Dropbox/Screenshots for files named "Screenshot *".
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# Change Log
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# 2016-04-15 / Sean Dellis
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# * Change application call to use "com.adobe.photoshop" to work regardless of Photoshop version
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# 2015-01-27 / Sean Dellis
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# * Add Standardized Header
-# * Rearrange functions to run more quickly
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 checkForScreenshots()
@@ -27,7 +16,8 @@ on checkForScreenshots()
 	
 	-- checks for screenshots in ~/Desktop
 	set desktopPath to POSIX path of (path to desktop)
-	set desktopPath to my trim(desktopPath, -1) -- trims / from end of path to fix extra character
+	-- trims forward slash from end of path to fix extra character in search results
+	set desktopPath to my trim(desktopPath, -1)
 	
 	-- finds screenshots created in the last minute
 	set latestScreenshots to findLatestFileMatching(desktopPath, "'Screen Shot *'")
@@ -56,7 +46,7 @@ on findLatestFileMatching(searchPath, searchTerm)
 	
 	try
 		
-		-- finds all files created in the last minute that contain searchTerm
+		-- finds all files created in the last minute that match the searchTerm
 		set latestFiles to "find " & searchPath & " -type f -mmin -1 -maxdepth 1 -iname " & searchTerm
 		set latestFileList to do shell script latestFiles
 		
@@ -88,6 +78,7 @@ end findLatestFileMatching
 
 on openFiles(fileList)
 	repeat with i in fileList
+		-- using "com.adobe.photoshop" for tell application allows it to work regardless of Photoshop version
 		tell application id "com.adobe.Photoshop"
 			activate
 			open alias i
