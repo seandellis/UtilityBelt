@@ -4,7 +4,7 @@ A collection of scripts and tools I've written to make it easier to get things d
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/800/1*qqAMQF2vTAs0qKaCYboW1g.jpeg)
 
-*My utility belt. Shark repellent spray not included.*
+*My utility belt. [Shark repellent spray](https://www.youtube.com/watch?v=CjRphRTk6EM&feature=youtu.be&t=295) not included.*
 
 ----
 
