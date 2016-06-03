@@ -3,6 +3,7 @@
 A collection of scripts and tools I've written to make it easier to get things done.
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/800/1*qqAMQF2vTAs0qKaCYboW1g.jpeg)
+
 *My utility belt. Shark repellent spray not included.*
 
 ----
@@ -37,6 +38,7 @@ Download [Open Latest Screenshot](https://raw.githubusercontent.com/seandellis/
 1.  *Open Latest Screenshot* should now appear in the FastScripts menu.  
 **Tip***: If you hold down the command key when selecting it you can assign a keyboard shortcut. I recommend control + O.*
 
-***** 
-*Photo credits: *Batman’s Utility Belt by [Michael Crawford](http://www.mwctoys.com/REVIEW_123013a.htm). Caricature by [@levitzo](https://twitter.com/levitzo).
+-----
+
+Photo credits: Batman’s Utility Belt by [Michael Crawford](http://www.mwctoys.com/REVIEW_123013a.htm). Caricature by [@levitzo](https://twitter.com/levitzo).
 
